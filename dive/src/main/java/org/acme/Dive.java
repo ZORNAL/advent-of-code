@@ -4,8 +4,6 @@ import java.util.*;
 
 public class Dive {
 
-    private static boolean logEnabled = true;
-
     private final Strategy strategy;
 
     public Dive(Strategy strategy) {
@@ -19,7 +17,7 @@ public class Dive {
     }
 
     public static boolean isLogEnabled() {
-        return logEnabled;
+        return true;
     }
 
     public int horizontalMultipliedByDepth(List<String> input){

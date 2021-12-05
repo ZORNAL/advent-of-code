@@ -5,12 +5,10 @@ import java.util.*;
 public class SonarSweep {
 
 
-    private static boolean logEnabled = false;
-    
     public static List<Integer> convert(List<Integer> input){
         final Iterator<Integer> iterator = input.iterator();
         final List<Integer> result = new LinkedList<>();
-        final Deque<Integer> queue = new ArrayDeque();
+        final Deque<Integer> queue = new ArrayDeque<>();
         while (iterator.hasNext()){
             queue.add(iterator.next());
             if(hasThreeElements(queue)){
@@ -59,7 +57,7 @@ public class SonarSweep {
     }
 
     public static boolean isLogEnabled() {
-        return logEnabled;
+        return false;
     }
 
 }

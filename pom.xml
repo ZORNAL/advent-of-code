@@ -18,6 +18,9 @@
 
     <modules>
         <module>sonar-sweep</module>
+        <module>binary-diagnostic</module>
+        <module>giant-squid</module>
+        <module>dive</module>
     </modules>
 
     <dependencyManagement>

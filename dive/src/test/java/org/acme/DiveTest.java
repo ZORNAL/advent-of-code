@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class DiveTest {
 
-    Dive underTest = new Dive(new DiveStrategy());
+    final Dive underTest = new Dive(new DiveStrategy());
 
     private static final List<String> INPUT = Arrays.asList("forward 5",
             "down 5",
