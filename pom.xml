@@ -21,6 +21,8 @@
         <module>binary-diagnostic</module>
         <module>giant-squid</module>
         <module>dive</module>
+        <module>lanternfish</module>
+        <module>hydrothermal-venture</module>
     </modules>
 
     <dependencyManagement>
