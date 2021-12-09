@@ -23,6 +23,7 @@
         <module>dive</module>
         <module>lanternfish</module>
         <module>hydrothermal-venture</module>
+        <module>seven-segment-search</module>
     </modules>
 
     <dependencyManagement>
