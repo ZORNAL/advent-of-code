@@ -91,8 +91,7 @@ public class SmokeBasinIdentifier {
             list.add(set);
         }
         final List<Integer> collect = list.stream().map(Set::size).sorted(Integer::compareTo).collect(Collectors.toList());
-        Collections.reverse(collect);
-        return collect.get(0) * collect.get(1) * collect.get(2);
+        return collect.get(collect.size() - 1) * collect.get(collect.size() - 2) * collect.get(collect.size() - 3);
     }
 
     private Set<Point> eat(final int[][] heights, final Point point, final Set<Point> visitedPoints) {
