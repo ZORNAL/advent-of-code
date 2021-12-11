@@ -24,10 +24,17 @@
         <module>lanternfish</module>
         <module>hydrothermal-venture</module>
         <module>seven-segment-search</module>
+        <module>dumbo-octopus</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.22</version>
+                <scope>provided</scope>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
