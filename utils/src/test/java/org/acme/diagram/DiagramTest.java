@@ -19,8 +19,7 @@ public class DiagramTest {
     }
 
     private void print(String board) {
-        System.out.println(board);
-        System.out.println();
+        System.out.println(board + "\n");
     }
 
     @Test
