@@ -28,6 +28,7 @@
         <module>dumbo-octopus</module>
         <module>passage-pathing</module>
         <module>utils</module>
+        <module>transparent-origami</module>
     </modules>
 
     <dependencyManagement>
