@@ -29,6 +29,8 @@
         <module>passage-pathing</module>
         <module>utils</module>
         <module>transparent-origami</module>
+        <module>extended-polymerization</module>
+        <module>chiton</module>
     </modules>
 
     <dependencyManagement>
@@ -37,6 +39,11 @@
                 <groupId>org.jgrapht</groupId>
                 <artifactId>jgrapht-core</artifactId>
                 <version>${jgrapht.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.12.0</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
