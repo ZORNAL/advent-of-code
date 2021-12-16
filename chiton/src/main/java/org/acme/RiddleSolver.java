@@ -15,6 +15,7 @@ public class RiddleSolver {
     private static boolean logEnabled = true;
 
     private static boolean part2 = false;
+
     private static void log(final String s) {
         if (isLogEnabled()) {
             System.out.println(s);
@@ -28,15 +29,26 @@ public class RiddleSolver {
     public long solve(List<String> lines) {
         Integer[][] map = createMap(lines);
 
-        if(part2){
+        if (part2) {
             map = extendMap(map);
         }
-        printMap(map);
         int size = map.length;
         DefaultDirectedWeightedGraph<String, DefaultEdge> graph = createGraph(map, size);
         List<String> shortestPath = calculateShortestPath(graph, size);
         double weight = calculateWeight(graph, shortestPath);
+        printPath(map, shortestPath);
         return (long) weight;
+    }
+
+    private void printPath(Integer[][] map, List<String> shortestPath) {
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[0].length; j++) {
+                if (!shortestPath.contains(i + "-" + j)) {
+                    map[i][j] = 0;
+                }
+            }
+        }
+        printMap(map);
     }
 
     private DefaultDirectedWeightedGraph<String, DefaultEdge> createGraph(Integer[][] map, int size) {
@@ -49,11 +61,11 @@ public class RiddleSolver {
         for (int y = 0; y < size; y++) {
             for (int x = 0; x < map[0].length; x++) {
                 String vertexName = createVertexName(y, x);
-                if(x + 1 < map[0].length){
+                if (x + 1 < map[0].length) {
                     createEdge(map[y][x + 1], graph, graph.addEdge(vertexName, createVertexName(y, x + 1)));
                 }
-                if(y + 1 < size){
-                    createEdge(map[y+1][x], graph, graph.addEdge(vertexName, createVertexName(y+1, x)));
+                if (y + 1 < size) {
+                    createEdge(map[y + 1][x], graph, graph.addEdge(vertexName, createVertexName(y + 1, x)));
                 }
             }
         }
@@ -76,12 +88,12 @@ public class RiddleSolver {
         return map;
     }
 
-    private int calc(int i, int i2) {
-        int i1 = i + i2;
-        if(i1 > 9){
-            return i1 %9;
+    private int calc(int value, int increment) {
+        int result = value + increment;
+        if (result >= 10) {
+            return result - 9;
         }
-        return i1;
+        return result;
     }
 
     private Integer[][] extendMap(Integer[][] map) {
@@ -89,7 +101,7 @@ public class RiddleSolver {
         for (int y = 0; y < map.length; y++) {
             for (int x = 0; x < map[0].length; x++) {
                 extendedMap[y][x] = map[y][x];
-                extendedMap[y][x + map[0].length]     = calc(map[y][x], 1);
+                extendedMap[y][x + map[0].length] = calc(map[y][x], 1);
                 extendedMap[y][x + map[0].length * 2] = calc(map[y][x], 2);
                 extendedMap[y][x + map[0].length * 3] = calc(map[y][x], 3);
                 extendedMap[y][x + map[0].length * 4] = calc(map[y][x], 4);

@@ -8,10 +8,8 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.lang.Math.max;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class RiddleSolverTest {
@@ -29,24 +27,21 @@ public class RiddleSolverTest {
 
     @Test
     public void shouldSolveSmallPuzzle() throws IOException {
-        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(40);
+        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(31);
     }
 
     @Test
     public void shouldSolveLargePuzzle() throws IOException {
-        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(523);
+        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(873);
     }
 
     @Test
     public void shouldSolveSmallPuzzleOnPart2() throws IOException {
-        underTest.setPart2(true);
-        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(315);
+        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(42);
     }
 
     @Test
     public void shouldSolveLargePuzzleOnPart2() throws IOException {
-        underTest.setPart2(true);
-        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(3063);
+        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(42);
     }
-
 }
