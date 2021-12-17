@@ -36,11 +36,11 @@ public class RiddleSolverTest {
 
     @Test
     public void shouldSolveSmallPuzzleOnPart2() throws IOException {
-        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(42);
+        assertThat(underTest.solve2(readFromFile(PATH_TO_SMALL))).isEqualTo(54);
     }
 
     @Test
     public void shouldSolveLargePuzzleOnPart2() throws IOException {
-        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(42);
+        assertThat(underTest.solve2(readFromFile(PATH))).isEqualTo(402817863665L);
     }
 }
