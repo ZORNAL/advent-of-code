@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -14,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RiddleSolverTest {
 
-    RiddleSolver underTest = new RiddleSolver();
+    final RiddleSolver underTest = new RiddleSolver();
 
     public static final String PATH = "src/test/resources/largeInput.txt";
     public static final String PATH_TO_SMALL = "src/test/resources/smallInput.txt";
