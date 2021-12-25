@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RiddleSolverTest {
 
-    private final RiddleSolver underTest = new RiddleSolver();
+    RiddleSolver underTest = new RiddleSolver();
 
     public static final String PATH = "src/test/resources/largeInput.txt";
     public static final String PATH_TO_SMALL = "src/test/resources/smallInput.txt";
@@ -27,12 +27,12 @@ public class RiddleSolverTest {
 
     @Test
     public void shouldSolveSmallPuzzle() throws IOException {
-        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(42);
+        assertThat(underTest.solve(readFromFile(PATH_TO_SMALL))).isEqualTo(590784);
     }
 
     @Test
     public void shouldSolveLargePuzzle() throws IOException {
-        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(42);
+        assertThat(underTest.solve(readFromFile(PATH))).isEqualTo(602574);
     }
 
     @Test

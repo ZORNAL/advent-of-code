@@ -17,6 +17,7 @@ public class RiddleSolver {
     }
 
     public int solve(List<String> strings){
+        log(strings.toString());
         return 42;
     }
 }

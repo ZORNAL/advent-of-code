@@ -8,9 +8,9 @@
         <groupId>org.acme</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>TODO</artifactId>
+    <artifactId>reactor-reboot</artifactId>
 
-    <name>TODO</name>
+    <name>Reactor Reboot</name>
 
         <dependencies>
             <dependency>
